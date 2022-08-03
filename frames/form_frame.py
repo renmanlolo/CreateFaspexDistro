@@ -176,7 +176,7 @@ class FormFrame(ttk.Frame):
         file_types_str = ",".join(contents_dict["fileTypes"])
         self.file_types_entry.insert(0, file_types_str)
 
-    def save_file(self, type):
+    def save_file(self, save_type):
         to_value = self.to_entry.get()
         cc_upload_value = self.cc_upload_entry.get()
         cc_download_value = self.cc_download_entry.get()
@@ -204,7 +204,7 @@ class FormFrame(ttk.Frame):
 
             # dictionary converted to json then stored as string on variable assignment
             data_values_str = json.dumps(data_values_dict)
-            if type == "text":
+            if save_type == "text":
                 file = fd.asksaveasfile(
                     title="Select Location",
                     defaultextension=".txt",
@@ -213,7 +213,7 @@ class FormFrame(ttk.Frame):
                 )
                 file.write(data_values_str)
 
-            elif type == "json":
+            elif save_type == "json":
                 file = fd.asksaveasfile(
                     title="Select Location",
                     defaultextension=".json",
