@@ -18,7 +18,7 @@ servers = {
 }
 
 
-def generate_fake_emails(count):
+def generate_fake_emails(count: int) -> str:
     """For testing purposes"""
     fake = Faker()
     email_array = []
@@ -30,13 +30,13 @@ def generate_fake_emails(count):
     return email_list
 
 
-def generate_passphrase():
+def generate_passphrase() -> str:
     """For testing purposes"""
     fake = Faker()
     return fake.password()
 
 
-def get_server_item(serv, request_type):
+def get_server_item(serv: str, request_type: str) -> str:
     """request types should be: 'key_request' or 'value_request'"""
     for key, value in servers.items():
         if request_type == "key_request":
