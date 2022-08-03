@@ -148,14 +148,11 @@ class FormFrame(ttk.Frame):
             ('All files', '*.*')
         )
         file = fd.askopenfilename(filetypes=filetypes, title="LOAD FILE")
-        print(file)
 
         with open(file, "r") as data_file:
             contents = data_file.read()
 
         contents_dict = ast.literal_eval(contents)
-        print(contents_dict)
-        print(contents_dict["to"])
 
         self.to_entry.delete(0, "end")
         self.to_entry.insert(0, contents_dict["to"])
