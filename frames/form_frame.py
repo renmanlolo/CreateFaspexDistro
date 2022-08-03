@@ -45,8 +45,6 @@ def get_server_item(serv: str, request_type: str) -> str:
         elif request_type == "value_request":
             if key == serv:
                 return value
-        else:
-            return
 
 
 class FormFrame(ttk.Frame):
